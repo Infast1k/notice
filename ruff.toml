@@ -15,6 +15,7 @@ ignore = [
     "D403",  # docstring: first word of the docstring should be capitalized
     "D401",  # docstring: first line of docstring should be in imperative mood
     "D205",  # docstring: 1 blank line required between summary line and description
+    "I001",  # imports: import block is un-sorted or un-formatted
 ]
 
 [lint.per-file-ignores]
