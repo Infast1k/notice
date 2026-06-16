@@ -6,3 +6,6 @@ ruff-fix-lint:
 
 ruff-format:
 	ruff format .
+
+test:
+	pytest .
