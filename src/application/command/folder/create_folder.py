@@ -2,7 +2,6 @@
 
 __author__ = 'infast1k'
 
-from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from uuid import UUID
 
@@ -10,6 +9,7 @@ from application.command.base.command import BaseCommand, BaseCommandHandler
 from application.command.folder.exceptions import FolderAlreadyExistsException
 
 from domain.folder.entity import Folder
+from domain.folder.repository import BaseFolderRepository
 from domain.folder.value_object import Title
 
 
@@ -19,20 +19,6 @@ class CreateFolderCommand(BaseCommand):
 
     title: str
     parent_id: UUID | None
-
-
-class BaseFolderRepository(ABC):
-    """Folder repository abstraction"""
-
-    @abstractmethod
-    async def folder_already_exists(self, folder: Folder) -> bool:
-        """Check if folder already exists"""
-        ...
-
-    @abstractmethod
-    async def add_folder(self, folder: Folder) -> Folder:
-        """Add new folder to storage"""
-        ...
 
 
 class CreateFolderCommandHandler(BaseCommandHandler[CreateFolderCommand, Folder]):
