@@ -6,7 +6,7 @@ authors = [
     {name = "infast1k",email = "infast1k@mail.ru"}
 ]
 license = "MIT"
-requires-python = ">=3.14"
+requires-python = ">=3.14,<4.0"
 dependencies = [
     "motor (>=3.7.1,<4.0.0)"
 ]
